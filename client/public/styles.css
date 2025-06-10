@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=McLaren&display=swap');
+
+:root {
+  --app-bg: #eee;                
+  --element-bg: #ffffff;          
+  --border-color: #e0e0e0;       
+  --shadow-color: rgb(161, 144, 144);
+  --primary-text-color: #1b1b1b;
+
+ 
+  --bs-primary: #e711cbad;           
+  --bs-primary-rgb: 245, 186, 19;
+  --bs-secondary: #6c757d;
+  --bs-body-color: var(--primary-text-color);
+  --bs-body-bg: var(--app-bg);
+  
+
+  --bs-font-sans-serif: 'Montserrat', sans-serif;
+}
+
+body {
+  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-bd-light {
+ --bs-btn-bg: #ebcceb;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
+.button-group a {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.note {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note button {
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  color: #a1489b;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+}
+
+form.create-note {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+
+form.create-note button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #a1489b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form.create-note .form-control {
+  border: none;
+  padding: 4px;
+  font-size: 1.2em;
+  resize: none;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+header {
+  background-color: #a1489b;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgb(241, 240, 240);
+  display: flex;
+  justify-content: space-between;
+}
+
+header h1  {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+}
+
+.header-icon {
+  margin-right: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--bs-secondary);
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.calendar-header h2 {
+    font-weight: 700;
+}
+
+.calendar-grid-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  padding: 0 0.5rem;
+}
+
+.day-name {
+  text-align: center;
+  padding-right: 0;
+  font-weight: 500;
+  color: var(--bs-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.note-preview {
+    background-color: #fff8e1;
+    color: #6d4c41;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #ffecb3;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.notes-previews-container {
+    width: 90%;
+    align-items: center;
+}
+.note-preview:hover {
+    background-color: #ffecb3;
+}
+.note-preview h3 {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.notebook-container {
+  padding: 0 2rem;
+}
+
+.full-note-view {
+    background: var(--element-bg);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    animation: fadeIn 0.5s ease-in-out;
+}
+.full-note-view h1 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+}
+.full-note-view p {
+    font-size: 1.1em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.full-note-view .btn {
+    color: var(--bs-primary);
+}
+
+.day-cell { 
+  background-color: var(--element-bg); 
+  border: 1px solid var(--border-color); 
+  border-radius: 0.75rem; 
+  min-height: 160px; 
+  max-width: 270px;
+  padding: 0.8rem; 
+  transition: transform 0.2s, box-shadow 0.2s; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+.day-cell:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 10px 20px var(--shadow-color); 
+}
+.day-cell.other-month { 
+  background-color: #f7f7f7; 
+  opacity: 0.7; 
+}
+.day-number { 
+  font-weight: 700; 
+  text-align: right; 
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+.calendar-nav .btn { margin: 0 0.5rem; }
+
+@keyframes fadeIn { 
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  } to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+}
+
+.chatbot-container { 
+  position: fixed; 
+  bottom: 0; 
+  right: 20px; 
+  width: 360px; 
+  height: 480px; 
+  display: flex; 
+  flex-direction: column; 
+  border-radius: 15px 15px 0 0; 
+  overflow: hidden; 
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3); 
+  background-color: #242526; 
+  z-index: 1000; 
+  animation: slideUp 0.3s ease-out; 
+}
+@keyframes slideUp { 
+  from { 
+    transform: translateY(100%); 
+    opacity: 0; 
+  } to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  } 
+}
+.chat-header { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 10px 15px; 
+  background: #18191a; 
+  color: #fff; 
+  border-bottom: 1px solid #444; 
+}
+.chat-header h2 { 
+  font-size: 1.1rem; 
+  font-weight: 600; 
+}
+.chat-header button { 
+  background: none; 
+  border: none; 
+  color: #fff; 
+  font-size: 1.5rem; 
+  cursor: pointer; 
+}
+.chat-body { 
+  flex-grow: 1; 
+  padding: 15px; 
+  overflow-y: auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+}
+.message { 
+  display: flex; 
+  align-items: flex-end; 
+  gap: 8px; 
+  max-width: 85%; 
+}
+.message-text { 
+  padding: 10px 15px; 
+  border-radius: 18px; 
+  font-size: 0.95rem; 
+  line-height: 1.4; 
+  word-wrap: break-word; 
+}
+.bot-message { 
+  align-self: flex-start; 
+}
+.bot-message .message-text { 
+  background-color: #3a3b3c; 
+  color: #e4e6eb; 
+}
+.user-message { 
+  align-self: flex-end; 
+  flex-direction: row-reverse; 
+}
+.user-message .message-text { 
+  background-color: #0084ff; 
+  color: white; 
+}
+.bot-icon { 
+  width: 30px; 
+  height: 30px; 
+  border-radius: 50%; 
+  background-color: var(--bs-primary); 
+  flex-shrink: 0; 
+}
+.chat-footer { 
+  padding: 10px; 
+  background: #18191a; 
+  border-top: 1px solid #444; 
+}
+.chat-form { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+}
+.message-input { 
+  flex-grow: 1; 
+  border: none; 
+  outline: none; 
+  background-color: #3a3b3c; 
+  color: #fff; 
+  padding: 10px 15px; 
+  border-radius: 18px; 
+  font-size: 0.95rem; 
+}
+.chat-form button { 
+  background: none; 
+  border: none; 
+  color: #0084ff; 
+  cursor: pointer; 
+  font-size: 1.8rem; 
+  transition: transform 0.2s; 
+}
+.chat-form button:hover { 
+  transform: scale(1.1); 
+}
+.chat-form button:disabled { 
+  color: #555; 
+  cursor: not-allowed; }
